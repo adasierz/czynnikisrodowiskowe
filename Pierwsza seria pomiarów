@@ -1,0 +1,23 @@
+#include <Grove_LED_Bar.h>
+#include <dht.h>
+
+const int DHT_PIN = A0;
+const int LIGHT = A1;
+
+dht DHT;
+
+void setup()
+{
+    Serial.begin(9600);
+    pinMode(LIGHT, INPUT);
+    pinMode(DHT_PIN, INPUT);
+}
+
+void loop()
+{
+    DHT.read11(DHT_PIN);
+    Serial.print(DHT.humidity); Serial.print('\t');
+    Serial.print(DHT.temperature); Serial.print('\t');
+    Serial.print(analogRead(LIGHT)); Serial.print('\n');
+    delay(600000);
+}
