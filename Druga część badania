@@ -1,0 +1,22 @@
+const int VIBRATION = A0;
+const int SOUND = A1; 
+
+void setup()
+{
+    Serial.begin(9600);
+    pinMode(VIBRATION, INPUT);
+    pinMode(SOUND, INPUT);
+}
+
+void loop()
+{
+    long measurement = vibration();
+    delay(5000);
+    Serial.print(measurement); Serial.print('\t');
+    Serial.print(analogRead(SOUND)); Serial.print('\n');
+}
+
+long vibration(){
+  long measurement=pulseIn (VIBRATION, HIGH);
+  return measurement;
+}
