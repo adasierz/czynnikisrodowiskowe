@@ -11,7 +11,7 @@ void setup()
 void loop()
 {
     long measurement = vibration();
-    delay(5000);
+    delay(600000);
     Serial.print(measurement); Serial.print('\t');
     Serial.print(analogRead(SOUND)); Serial.print('\n');
 }
