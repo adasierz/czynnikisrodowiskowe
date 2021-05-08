@@ -15,7 +15,6 @@ void loop()
     Serial.print(measurement); Serial.print('\t');
     Serial.print(analogRead(SOUND)); Serial.print('\n');
 }
-
 long vibration(){
   long measurement=pulseIn (VIBRATION, HIGH);
   return measurement;
